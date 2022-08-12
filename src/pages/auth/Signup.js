@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './auth.css';
 import { Grid, Paper, Avatar, TextField, Checkbox, FormControlLabel, Button } from '@mui/material';
 import { LockOutlined } from '@mui/icons-material';
 
