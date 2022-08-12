@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { MenuItems } from './MenuItems';
 import { MailOutline, Menu, Close } from '@mui/icons-material';
 import { Button } from '../button/Button';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 
-function Navbar() {
+function Navbar(props) {
     const [active, setActive] = useState(false);
+    const navigate = useNavigate();
+    const isLoggedIn = props.isLoggedIn;
 
     const handleClick = () => {
         setActive(!active);
@@ -31,7 +34,11 @@ function Navbar() {
                     );
                 })}
             </ul>
-            <Button>Sign Up</Button>
+            {isLoggedIn ? (
+                <Button onClick={() => navigate('/auth')}>Logout</Button>
+            ) : (
+                <Button onClick={() => navigate('/auth')}>Sign Up</Button>
+            )}
         </nav>
     );
 }
