@@ -3,8 +3,8 @@ import Navbar from './components/navbar/Navbar';
 import { useState } from 'react';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './pages/home/Home';
-import Create from './pages/create/Create';
 import Signup from './pages/auth/Signup';
+import Login from './pages/auth/Login';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -21,7 +21,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/auth" element={<Signup onLogIn={handleLogIn} onLogOut={handleLogOut} isLoggedIn={isLoggedIn} />} />
+        <Route path="/login" element={<Login onLogIn={handleLogIn} onLogOut={handleLogOut} isLoggedIn={isLoggedIn} />} />
+        <Route path="/signup" element={<Signup onLogIn={handleLogIn} onLogOut={handleLogOut} isLoggedIn={isLoggedIn} />} />
       </Routes>
     </Router>
   );

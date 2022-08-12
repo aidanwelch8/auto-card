@@ -16,7 +16,7 @@ function Navbar(props) {
 
     return(
         <nav className="navbarItems">
-            <h1 className="navbarLogo">
+            <h1 className="navbarLogo" onClick={() => navigate('/')}>
                 Auto<div className="navbarName2">Card</div>
                 <div className="icon"><MailOutline sx={{ fontSize: "32px" }}/></div>
             </h1>
@@ -35,9 +35,9 @@ function Navbar(props) {
                 })}
             </ul>
             {isLoggedIn ? (
-                <Button onClick={() => navigate('/auth')}>Logout</Button>
+                <Button onClick={() => navigate('/')}>Logout</Button>
             ) : (
-                <Button onClick={() => navigate('/auth')}>Sign Up</Button>
+                <Button onClick={() => navigate('/login')}>Sign In</Button>
             )}
         </nav>
     );
