@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Paper, Avatar, TextField, Checkbox, FormControlLabel, Button, Typography, Link } from '@mui/material';
 import { LockOutlined } from '@mui/icons-material';
+import './auth.css';
 
 function Login() {
     const paperStyle = {padding: '20px', height: '60vh', width: '450px', margin: '40px auto'};
