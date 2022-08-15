@@ -3,6 +3,8 @@ import { MenuItems } from './MenuItems';
 import { MailOutline, Menu, Close } from '@mui/icons-material';
 import { Button } from '../button/Button';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../../Firebase';
+import { signOut } from 'firebase/auth';
 import './navbar.css';
 
 function Navbar(props) {
@@ -12,6 +14,12 @@ function Navbar(props) {
 
     const handleClick = () => {
         setActive(!active);
+    };
+
+    const handleLogout = async () => {
+        props.onLogOut();
+        await signOut(auth);
+        navigate('/');
     };
 
     return(
@@ -35,7 +43,7 @@ function Navbar(props) {
                 })}
             </ul>
             {isLoggedIn ? (
-                <Button onClick={() => navigate('/')}>Logout</Button>
+                <Button onClick={handleLogout}>Logout</Button>
             ) : (
                 <Button onClick={() => navigate('/login')}>Sign In</Button>
             )}

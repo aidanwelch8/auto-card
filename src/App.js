@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar onLogIn={handleLogIn} onLogOut={handleLogOut} isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login onLogIn={handleLogIn} onLogOut={handleLogOut} isLoggedIn={isLoggedIn} />} />
